@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>News - Iyunga Secondary School</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+            /* School Logo */
+        .school-logo {
+            position: absolute;
+            display: block;
+            left: 50px;
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            background-color: none;
+            border-radius: 50%;
+            padding: 8px;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+        /* Header */
+        header {
+            background: #063970;
+            color: white;
+            padding: 20;
+            min-height: 0;
+            position: relative;
+            height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            flex-direction: column;
+        }
+
+        header h1 {
+            font-size: 30px;
+        }
+
+        header p {
+            margin-top: 5px;
+        }
+
+        /* Navigation */
+        nav {
+            background: #021f3f;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        /* Page title */
+        .page-title {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .page-title h2 {
+            color: #063970;
+            font-size: 32px;
+        }
+
+        .page-title p {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        /* News container */
+        .news-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+
+            padding-bottom: 40px;
+        }
+
+        /* News card */
+        .news-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+            transition: 0.3s;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+        }
+
+        .news-content {
+            padding: 20px;
+        }
+
+        .news-content h3 {
+            color: #063970;
+            margin-bottom: 10px;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .news-content p {
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 15px;
+            background: #063970;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            background: #021f3f;
+        }
+
+        /* Footer */
+        footer {
+            background: #021f3f;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+         <img src="../images/logo.jpeg"
+             alt="Iyunga Secondary School Logo"
+             class="school-logo">
+        <h1>IYUNGA SECONDARY SCHOOL</h1>
+        <p>Education for Excellence and Success</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="academics.html">Academics</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="activities.html">Activities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <!-- Page Title -->
+    <section class="page-title">
+        <h2>School News</h2>
+        <p>Latest news, announcements and events from Iyunga Secondary School</p>
+    </section>
+
+    <!-- News -->
+    <section class="news-container">
+
+        <!-- News 1 -->
+        <div class="news-card">
+
+            <img src="images/school.jpg" alt="School News">
+
+            <div class="news-content">
+
+                <h3>Welcome to the New Academic Year</h3>
+
+                <div class="date">
+                    📅 12 August 2026
+                </div>
+
+                <p>
+                    Iyunga Secondary School welcomes all students
+                    to the new academic year. Students are encouraged
+                    to maintain discipline and focus on their studies.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 2 -->
+        <div class="news-card">
+
+            <img src="images/sports.jpg" alt="Sports News">
+
+            <div class="news-content">
+
+                <h3>Inter-School Sports Competition</h3>
+
+                <div class="date">
+                    📅 10 August 2026
+                </div>
+
+                <p>
+                    Our school is preparing for the upcoming
+                    inter-school sports competition. Students
+                    are encouraged to participate actively.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 3 -->
+        <div class="news-card">
+
+            <img src="images/students.jpg" alt="Students">
+
+            <div class="news-content">
+
+                <h3>Academic Excellence Programme</h3>
+
+                <div class="date">
+                    📅 05 August 2026
+                </div>
+
+                <p>
+                    The school has introduced an academic excellence
+                    programme aimed at improving students' performance
+                    in all subjects.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read More
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- News 4 -->
+        <div class="news-card">
+
+            <img src="images/meeting.jpg" alt="School Meeting">
+
+            <div class="news-content">
+
+                <h3>Parents and Teachers Meeting</h3>
+
+                <div class="date">
+                    📅 01 August 2026
+                </div>
+
+                <p>
+                    Parents and teachers will meet to discuss
+                    students' academic progress, discipline and
+                    other important school matters.
+                </p>
+
+                <a href="#" class="read-more">
+                    Read More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Iyunga Secondary School. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

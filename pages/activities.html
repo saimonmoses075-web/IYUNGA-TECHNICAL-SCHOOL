@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Activities - Iyunga Secondary School</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background-color: #063970;
+            color: white;
+            padding: 18px 40px;
+
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+
+            background-color: white;
+            border-radius: 50%;
+            padding: 5px;
+
+            margin-right: 18px;
+        }
+
+        .school-name h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .school-name p {
+            margin: 5px 0 0;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background-color: #022b52;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+
+            color: white;
+            text-decoration: none;
+
+            padding: 16px 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #f2a900;
+            color: #222;
+        }
+
+
+        /* ================= PAGE TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .page-title h2 {
+            color: #063970;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+
+        /* ================= ACTIVITIES ================= */
+
+        .activities-container {
+            width: 90%;
+            max-width: 1150px;
+
+            margin: 30px auto 50px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        /* ================= ACTIVITY CARD ================= */
+
+        .activity-card {
+            background-color: white;
+
+            border-radius: 10px;
+            overflow: hidden;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            transition: 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,0.18);
+        }
+
+
+        /* Activity Image */
+
+        .activity-card img {
+            width: 100%;
+            height: 190px;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+
+        /* Activity Information */
+
+        .activity-info {
+            padding: 20px;
+        }
+
+        .activity-info h3 {
+            color: #063970;
+            margin-top: 0;
+        }
+
+        .activity-info p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+
+        /* Activity Button */
+
+        .activity-btn {
+            display: inline-block;
+
+            margin-top: 8px;
+
+            padding: 9px 17px;
+
+            background-color: #063970;
+            color: white;
+
+            text-decoration: none;
+
+            border-radius: 5px;
+        }
+
+        .activity-btn:hover {
+            background-color: #f2a900;
+            color: #222;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #063970;
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .activities-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .school-name h1 {
+                font-size: 19px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .activities-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h2 {
+                font-size: 26px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <img
+            src="../images/logo.jpeg"
+            alt="Iyunga Secondary School Logo"
+            class="logo"
+        >
+
+        <div class="school-name">
+
+            <h1>Iyunga Secondary School</h1>
+
+            <p>Education for Better Future</p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="academics.html">
+            Academics
+        </a>
+
+        <a href="admissions.html">
+            Admissions
+        </a>
+
+        <a href="teachers.html">
+            Teachers
+        </a>
+
+        <a href="students.html">
+            Students
+        </a>
+
+        <a href="activities.html" class="active">
+            Activities
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h2>School Activities</h2>
+
+        <p>
+            Iyunga Secondary School provides students with
+            different activities that help develop their talents,
+            creativity, leadership skills, teamwork and discipline.
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= ACTIVITIES ================= -->
+
+    <section class="activities-container">
+
+
+        <!-- SPORTS -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/sports.jpeg"
+                alt="School Sports"
+            >
+
+            <div class="activity-info">
+
+                <h3>Sports</h3>
+
+                <p>
+                    Students participate in football, basketball,
+                    volleyball, athletics and other sports activities.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- DEBATE -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/debate.jpeg"
+                alt="Debate Club"
+            >
+
+            <div class="activity-info">
+
+                <h3>Debate Club</h3>
+
+                <p>
+                    Students develop communication, confidence,
+                    critical thinking and public speaking skills
+                    through debates.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MUSIC -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/music.jpeg"
+                alt="Music Activities"
+            >
+
+            <div class="activity-info">
+
+                <h3>Music & Arts</h3>
+
+                <p>
+                    Students develop their talents through music,
+                    singing, dancing, drama and other creative arts.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCIENCE -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/science.jpeg"
+                alt="Science Competition"
+            >
+
+            <div class="activity-info">
+
+                <h3>Science Competitions</h3>
+
+                <p>
+                    Students participate in science projects,
+                    experiments and academic competitions.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ENVIRONMENT -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/environment.jpeg"
+                alt="Environmental Activities"
+            >
+
+            <div class="activity-info">
+
+                <h3>Environmental Activities</h3>
+
+                <p>
+                    Students participate in tree planting,
+                    environmental conservation and school
+                    cleanliness activities.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CLUBS -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/clubs.jpeg"
+                alt="School Clubs"
+            >
+
+            <div class="activity-info">
+
+                <h3>Clubs & Societies</h3>
+
+                <p>
+                    Students can join different clubs and societies
+                    according to their interests and talents.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCOUTS -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/scouts.jpeg"
+                alt="Scouts"
+            >
+
+            <div class="activity-info">
+
+                <h3>Scouts</h3>
+
+                <p>
+                    Scouts activities help students develop
+                    discipline, teamwork, leadership and
+                    responsibility.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ACADEMIC COMPETITION -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/academic.jpeg"
+                alt="Academic Competition"
+            >
+
+            <div class="activity-info">
+
+                <h3>Academic Competitions</h3>
+
+                <p>
+                    Students participate in quizzes, academic
+                    competitions and educational challenges.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCHOOL EVENTS -->
+
+        <div class="activity-card">
+
+            <img
+                src="../images/events.jpeg"
+                alt="School Events"
+            >
+
+            <div class="activity-info">
+
+                <h3>School Events</h3>
+
+                <p>
+                    The school organizes educational events,
+                    celebrations, competitions and special
+                    student activities.
+                </p>
+
+                <a href="#" class="activity-btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Iyunga Secondary School
+        </p>
+
+        <p>
+            Education for Better Future
+        </p>
+
+    </footer>
+
+
+</body>
+</html>

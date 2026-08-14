@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gallery - Iyunga Secondary School</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background-color: #063970;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 18px;
+        }
+
+        .school-name h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .school-name p {
+            margin: 5px 0 0;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background-color: #022b52;
+            text-align: center;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 16px 14px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background-color: #f2a900;
+            color: #222;
+        }
+
+        /* ================= PAGE TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .page-title h2 {
+            color: #063970;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery-container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 230px;
+            overflow: hidden;
+            border-radius: 10px;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        /* Image caption */
+
+        .caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+            padding: 14px;
+
+            background: rgba(0, 0, 0, 0.65);
+            color: white;
+
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #063970;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* ================= LIGHTBOX ================= */
+
+        .lightbox {
+            display: none;
+
+            position: fixed;
+            z-index: 1000;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.9);
+
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+
+            top: 25px;
+            right: 40px;
+
+            color: white;
+
+            font-size: 40px;
+
+            cursor: pointer;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .gallery-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .school-name h1 {
+                font-size: 19px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h2 {
+                font-size: 26px;
+            }
+
+            .close {
+                right: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <img
+            src="../images/logo.jpeg"
+            alt="Iyunga Secondary School Logo"
+            class="logo"
+        >
+
+        <div class="school-name">
+
+            <h1>Iyunga Secondary School</h1>
+
+            <p>Education for Better Future</p>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="academics.html">
+            Academics
+        </a>
+
+        <a href="admissions.html">
+            Admissions
+        </a>
+
+        <a href="teachers.html">
+            Teachers
+        </a>
+
+        <a href="students.html">
+            Students
+        </a>
+
+        <a href="activities.html">
+            Activities
+        </a>
+
+        <a href="gallery.html" class="active">
+            Gallery
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h2>School Gallery</h2>
+
+        <p>
+            Explore photos showing school life, students,
+            teachers, activities, sports, classrooms and
+            important events at Iyunga Secondary School.
+        </p>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section class="gallery-container">
+
+
+        <!-- SCHOOL -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/building.jpeg')">
+
+            <img
+                src="../images/building.jpeg"
+                alt="Iyunga Secondary School"
+            >
+
+            <div class="caption">
+                Our School
+            </div>
+
+        </div>
+
+
+        <!-- CLASSROOM -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/classroom.jpeg')">
+
+            <img
+                src="../images/events.jpeg"
+                alt="Classroom"
+            >
+
+            <div class="caption">
+                Classrooms
+            </div>
+
+        </div>
+
+
+        <!-- STUDENTS -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/students.jpeg')">
+
+            <img
+                src="../images/students.jpeg"
+                alt="Students"
+            >
+
+            <div class="caption">
+                Students
+            </div>
+
+        </div>
+
+
+        <!-- TEACHERS -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/teachers.jpeg')">
+
+            <img
+                src="../images/teachers.jpeg"
+                alt="Teachers"
+            >
+
+            <div class="caption">
+                Teachers
+            </div>
+
+        </div>
+
+
+        <!-- SPORTS -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/sports.jpeg')">
+
+            <img
+                src="../images/sports.jpeg"
+                alt="Sports"
+            >
+
+            <div class="caption">
+                Sports Activities
+            </div>
+
+        </div>
+
+
+        <!-- LABORATORY -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/laboratory.jpeg')">
+
+            <img
+                src="../images/laboratory.jpeg"
+                alt="School Laboratory"
+            >
+
+            <div class="caption">
+                Science Laboratory
+            </div>
+
+        </div>
+
+
+        <!-- SCHOOL EVENT -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/event.jpeg')">
+
+            <img
+                src="../images/events.jpeg"
+                alt="School Event"
+            >
+
+            <div class="caption">
+                School Events
+            </div>
+
+        </div>
+
+
+        <!-- DEBATE -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/debate.jpeg')">
+
+            <img
+                src="../images/debate.jpeg"
+                alt="Debate"
+            >
+
+            <div class="caption">
+                Debate Club
+            </div>
+
+        </div>
+
+
+        <!-- MUSIC -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/music.jpeg')">
+
+            <img
+                src="../images/music.jpeg"
+                alt="Music"
+            >
+
+            <div class="caption">
+                Music & Arts
+            </div>
+
+        </div>
+
+
+        <!-- ENVIRONMENT -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/environment.jpeg')">
+
+            <img
+                src="../images/environment.jpeg"
+                alt="Environment"
+            >
+
+            <div class="caption">
+                Environmental Activities
+            </div>
+
+        </div>
+
+
+        <!-- ACADEMIC -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/academic.jpeg')">
+
+            <img
+                src="../images/academic.jpeg"
+                alt="Academic Competition"
+            >
+
+            <div class="caption">
+                Academic Competition
+            </div>
+
+        </div>
+
+
+        <!-- SCHOOL LIFE -->
+
+        <div class="gallery-item"
+             onclick="openImage('../images/life.png')">
+
+            <img
+                src="../images/life.png"
+                alt="School Life"
+            >
+
+            <div class="caption">
+                School Life
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LIGHTBOX ================= -->
+
+    <div class="lightbox" id="lightbox">
+
+        <span class="close"
+              onclick="closeImage()">
+            &times;
+        </span>
+
+        <img id="lightbox-image" src="" alt="Gallery Image">
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Iyunga Secondary School
+        </p>
+
+        <p>
+            Education for Better Future
+        </p>
+
+    </footer>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        function openImage(image) {
+
+            document.getElementById("lightbox-image").src = image;
+
+            document.getElementById("lightbox").style.display = "flex";
+
+        }
+
+
+        function closeImage() {
+
+            document.getElementById("lightbox").style.display = "none";
+
+        }
+
+    </script>
+
+</body>
+</html>

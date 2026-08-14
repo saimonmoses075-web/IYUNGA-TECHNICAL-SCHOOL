@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Iyunga Secondary School Timetable</title>
+
+    <style>
+        /* =========================
+           GENERAL PAGE
+        ========================== */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #222;
+        }
+
+        /* =========================
+           SCHOOL HEADER
+        ========================== */
+        .school-header {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0b3d91;
+            color: white;
+            padding: 15px 30px;
+            min-height: 130px;
+        }
+
+        /* School Logo */
+        .school-logo {
+            position: flex;
+            left: 50px;
+            width: 95px;
+            height: 95px;
+            object-fit: contain;
+            background-color: none;
+            border-radius: 70%;
+            padding: 8px;
+        }
+
+        /* School Title */
+        .school-title {
+            text-align: center;
+        }
+
+        .school-title h1 {
+            margin: 5px 0;
+            font-size: 30px;
+        }
+
+        .school-title h2 {
+            margin: 8px 0;
+            font-size: 23px;
+        }
+
+        .school-title p {
+            margin: 5px 0;
+            font-size: 16px;
+        }
+          /* Navigation */
+        nav {
+            background: #022b52;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            background: #f2a900;
+            border-radius: 5px;
+        }
+
+
+        /* =========================
+           TIMETABLE CONTAINER
+        ========================== */
+        .timetable-container {
+            width: 95%;
+            margin: 30px auto;
+            overflow-x: auto;
+        }
+
+        .timetable-container h2 {
+            text-align: center;
+            color: #0b3d91;
+            margin-bottom: 20px;
+        }
+
+        /* =========================
+           TABLE
+        ========================== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        th,
+        td {
+            border: 1px solid #aaa;
+            padding: 14px;
+            text-align: center;
+        }
+
+        /* Table Header */
+        th {
+            background-color: #0b3d91;
+            color: white;
+            font-size: 15px;
+        }
+
+        /* Day Column */
+        td:first-child {
+            font-weight: bold;
+            background-color: #eaf0ff;
+        }
+
+        /* Hover */
+        tr:hover {
+            background-color: #f1f5ff;
+        }
+
+        /* Break */
+        .break {
+            background-color: #ffd966;
+            font-weight: bold;
+        }
+
+        /* Lunch */
+        .lunch {
+            background-color: #90ee90;
+            font-weight: bold;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+        footer {
+            text-align: center;
+            background-color: #0b3d91;
+            color: white;
+            padding: 15px;
+            margin-top: 30px;
+        }
+
+        /* =========================
+           MOBILE
+        ========================== */
+        @media (max-width: 768px) {
+
+            .school-header {
+                min-height: 170px;
+                padding: 15px;
+            }
+
+            .school-logo {
+                position: static;
+                width: 65px;
+                height: 65px;
+                margin-right: 12px;
+            }
+
+            .school-title h1 {
+                font-size: 19px;
+            }
+
+            .school-title h2 {
+                font-size: 16px;
+            }
+
+            .school-title p {
+                font-size: 12px;
+            }
+
+            th,
+            td {
+                padding: 8px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         SCHOOL HEADER
+    ========================== -->
+
+    <header class="school-header">
+
+        <img src="../images/logo.jpeg"
+             alt="Iyunga Secondary School Logo"
+             class="school-logo">
+
+        <div class="school-title">
+
+            <h1>IYUNGA SECONDARY SCHOOL</h1>
+
+            <h2>WEEKLY SCHOOL TIMETABLE</h2>
+
+            <p>Academic Year 2026/2027</p>
+
+        </div>
+
+    </header>
+      <!-- Navigation -->
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="academics.html">Academics</a>
+        <a href="admissions.html">Admissions</a>
+        <a href="teachers.html">Teachers</a>
+        <a href="students.html">Students</a>
+        <a href="activities.html">Activities</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+
+    <!-- =========================
+         TIMETABLE
+    ========================== -->
+
+    <div class="timetable-container">
+
+        <h2>SECONDARY SCHOOL CLASS TIMETABLE</h2>
+
+        <table>
+
+            <!-- TABLE HEADER -->
+
+            <tr>
+                <th>Day</th>
+                <th>08:00 - 09:00</th>
+                <th>09:00 - 10:00</th>
+                <th>10:00 - 10:30</th>
+                <th>10:30 - 11:30</th>
+                <th>11:30 - 12:30</th>
+                <th>12:30 - 14:00</th>
+                <th>14:00 - 15:00</th>
+                <th>15:00 - 16:00</th>
+            </tr>
+
+
+            <!-- MONDAY -->
+
+            <tr>
+                <td>Monday</td>
+
+                <td>
+                    Mathematics
+                    <br>
+                    Form I
+                </td>
+
+                <td>
+                    English
+                    <br>
+                    Form I
+                </td>
+
+                <td class="break">
+                    BREAK
+                </td>
+
+                <td>
+                    Biology
+                    <br>
+                    Form II
+                </td>
+
+                <td>
+                    Geography
+                    <br>
+                    Form II
+                </td>
+
+                <td class="lunch">
+                    LUNCH
+                </td>
+
+                <td>
+                    Kiswahili
+                    <br>
+                    Form III
+                </td>
+
+                <td>
+                    History
+                    <br>
+                    Form III
+                </td>
+            </tr>
+
+
+            <!-- TUESDAY -->
+
+            <tr>
+                <td>Tuesday</td>
+
+                <td>
+                    Physics
+                    <br>
+                    Form III
+                </td>
+
+                <td>
+                    Mathematics
+                    <br>
+                    Form II
+                </td>
+
+                <td class="break">
+                    BREAK
+                </td>
+
+                <td>
+                    Chemistry
+                    <br>
+                    Form III
+                </td>
+
+                <td>
+                    English
+                    <br>
+                    Form II
+                </td>
+
+                <td class="lunch">
+                    LUNCH
+                </td>
+
+                <td>
+                    Civics
+                    <br>
+                    Form IV
+                </td>
+
+                <td>
+                    Computer
+                    <br>
+                    Form IV
+                </td>
+            </tr>
+
+
+            <!-- WEDNESDAY -->
+
+            <tr>
+                <td>Wednesday</td>
+
+                <td>
+                    Geography
+                    <br>
+                    Form I
+                </td>
+
+                <td>
+                    Biology
+                    <br>
+                    Form III
+                </td>
+
+                <td class="break">
+                    BREAK
+                </td>
+
+                <td>
+                    Kiswahili
+                    <br>
+                    Form II
+                </td>
+
+                <td>
+                    Mathematics
+                    <br>
+                    Form IV
+                </td>
+
+                <td class="lunch">
+                    LUNCH
+                </td>
+
+                <td>
+                    History
+                    <br>
+                    Form IV
+                </td>
+
+                <td>
+                    Physics
+                    <br>
+                    Form IV
+                </td>
+            </tr>
+
+
+            <!-- THURSDAY -->
+
+            <tr>
+                <td>Thursday</td>
+
+                <td>
+                    Chemistry
+                    <br>
+                    Form II
+                </td>
+
+                <td>
+                    English
+                    <br>
+                    Form III
+                </td>
+
+                <td class="break">
+                    BREAK
+                </td>
+
+                <td>
+                    Civics
+                    <br>
+                    Form I
+                </td>
+
+                <td>
+                    Geography
+                    <br>
+                    Form III
+                </td>
+
+                <td class="lunch">
+                    LUNCH
+                </td>
+
+                <td>
+                    Mathematics
+                    <br>
+                    Form III
+                </td>
+
+                <td>
+                    Biology
+                    <br>
+                    Form IV
+                </td>
+            </tr>
+
+
+            <!-- FRIDAY -->
+
+            <tr>
+                <td>Friday</td>
+
+                <td>
+                    History
+                    <br>
+                    Form II
+                </td>
+
+                <td>
+                    Physics
+                    <br>
+                    Form II
+                </td>
+
+                <td class="break">
+                    BREAK
+                </td>
+
+                <td>
+                    Mathematics
+                    <br>
+                    Form I
+                </td>
+
+                <td>
+                    Chemistry
+                    <br>
+                    Form IV
+                </td>
+
+                <td class="lunch">
+                    LUNCH
+                </td>
+
+                <td>
+                    English
+                    <br>
+                    Form IV
+                </td>
+
+                <td>
+                    Physical Education
+                    <br>
+                    All Forms
+                </td>
+            </tr>
+
+        </table>
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Iyunga Secondary School
+        </p>
+
+        <p>
+            Education is the key to success
+        </p>
+
+    </footer>
+
+</body>
+</html>

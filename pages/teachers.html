@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Teachers - Iyunga Secondary School</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+            color: #333;
+        }
+
+        /* ================= HEADER ================= */
+
+        header {
+            background: #063970;
+            color: white;
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            width: 75px;
+            height: 75px;
+            object-fit: contain;
+            background: white;
+            border-radius: 50%;
+            padding: 5px;
+            margin-right: 18px;
+        }
+
+        .school-name h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .school-name p {
+            margin: 5px 0 0;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            background: #022b52;
+            text-align: center;
+            padding: 0;
+        }
+
+        nav a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 16px 15px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #f2a900;
+            color: #222;
+        }
+
+        /* ================= PAGE TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            padding: 40px 20px 20px;
+        }
+
+        .page-title h2 {
+            color: #063970;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .page-title p {
+            color: #666;
+        }
+
+        /* ================= TEACHERS ================= */
+
+        .teachers-container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 20px auto 50px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .teacher-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+
+            transition: 0.3s;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+        }
+
+        /* Teacher photo */
+
+        .teacher-photo {
+            width: 120px;
+            height: 120px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            margin-top: 25px;
+
+            border: 4px solid #063970;
+        }
+
+        .teacher-info {
+            padding: 20px;
+        }
+
+        .teacher-info h3 {
+            color: #063970;
+            margin: 5px 0;
+        }
+
+        .teacher-info .position {
+            color: #f2a900;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .teacher-info p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #063970;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer p {
+            margin: 5px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            .teachers-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            header {
+                padding: 15px;
+            }
+
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            .school-name h1 {
+                font-size: 19px;
+            }
+
+            nav a {
+                display: block;
+                padding: 10px;
+            }
+
+            .teachers-container {
+                grid-template-columns: 1fr;
+            }
+
+            .page-title h2 {
+                font-size: 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+
+        <img src="../logo.jpeg"
+             alt="Iyunga Secondary School Logo"
+             class="logo">
+
+        <div class="school-name">
+            <h1>Iyunga Secondary School</h1>
+            <p>Education for Better Future</p>
+        </div>
+
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="../index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="academics.html">Academics</a>
+
+        <a href="admissions.html">Admissions</a>
+
+        <a href="teachers.html" class="active">Teachers</a>
+
+        <a href="students.html">Students</a>
+
+        <a href="activities.html">Activities</a>
+
+        <a href="gallery.html">Gallery</a>
+
+        <a href="news.html">News</a>
+
+        <a href="contact.html">Contact</a>
+
+    </nav>
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <section class="page-title">
+
+        <h2>Our Teachers</h2>
+
+        <p>
+            Meet our dedicated teachers who provide quality education
+            and guide students towards a better future.
+        </p>
+
+    </section>
+
+
+    <!-- ================= TEACHERS ================= -->
+
+    <section class="teachers-container">
+
+
+        <!-- Teacher 1 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher1.jpeg"
+                 alt="Head of School"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. John Michael</h3>
+
+                <div class="position">
+                    Head of School
+                </div>
+
+                <p>
+                    Responsible for the overall management,
+                    leadership and academic development of the school.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 2 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher2.jpeg"
+                 alt="Mathematics Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. David Joseph</h3>
+
+                <div class="position">
+                    Mathematics Teacher
+                </div>
+
+                <p>
+                    Teaches Mathematics and supports students
+                    in developing problem-solving skills.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 3 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher7.jpeg"
+                 alt="English Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mrs. Grace Mary</h3>
+
+                <div class="position">
+                    English Teacher
+                </div>
+
+                <p>
+                    Teaches English language and helps students
+                    improve communication and writing skills.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 4 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher5.jpeg"
+                 alt="Biology Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. Peter Daniel</h3>
+
+                <div class="position">
+                    Biology Teacher
+                </div>
+
+                <p>
+                    Teaches Biology and encourages students
+                    to understand science and the environment.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 5 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher10.jpeg"
+                 alt="Chemistry Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mrs. Anna Joseph</h3>
+
+                <div class="position">
+                    Chemistry Teacher
+                </div>
+
+                <p>
+                    Teaches Chemistry through practical and
+                    theoretical learning activities.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 6 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher6.jpeg"
+                 alt="Geography Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. Samuel John</h3>
+
+                <div class="position">
+                    Geography Teacher
+                </div>
+
+                <p>
+                    Teaches Geography and helps students understand
+                    people, places and the environment.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 7 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher3.jpeg"
+                 alt="History Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. Daniel Thomas</h3>
+
+                <div class="position">
+                    History Teacher
+                </div>
+
+                <p>
+                    Teaches History and helps students understand
+                    important events and civilizations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 8 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher8.jpeg"
+                 alt="Physics Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mrs. Elizabeth Paul</h3>
+
+                <div class="position">
+                    Physics Teacher
+                </div>
+
+                <p>
+                    Teaches Physics and guides students through
+                    scientific concepts and experiments.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teacher 9 -->
+
+        <div class="teacher-card">
+
+            <img src="../images/teacher11.jpeg"
+                 alt="Kiswahili Teacher"
+                 class="teacher-photo">
+
+            <div class="teacher-info">
+
+                <h3>Mr. Emmanuel Lucas</h3>
+
+                <div class="position">
+                    Kiswahili Teacher
+                </div>
+
+                <p>
+                    Teaches Kiswahili language, literature
+                    and communication skills.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Iyunga Secondary School
+        </p>
+
+        <p>
+            Education for Better Future
+        </p>
+
+    </footer>
+
+</body>
+</html>

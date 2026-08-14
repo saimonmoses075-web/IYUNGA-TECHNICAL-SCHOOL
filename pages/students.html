@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Students - Iyunga Secondary School</title>
+
+    <style>
+
+        /* =========================
+           GENERAL
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fb;
+            color: #222;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================== */
+
+        header {
+            background-color: #063970;
+            color: white;
+
+            height: 70px;
+            position: relative;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+        }
+
+        .logo {
+            position: absolute;
+
+            top: 8px;
+            left: 15px;
+
+            width: 55px;
+            height: 55px;
+
+            object-fit: contain;
+        }
+
+        header h1 {
+            font-size: 22px;
+            margin: 0;
+        }
+
+        header p {
+            font-size: 13px;
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================== */
+
+        nav {
+            background-color: #021f3f;
+
+            padding: 12px;
+
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+
+            text-decoration: none;
+
+            margin: 0 10px;
+
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+
+        /* =========================
+           PAGE TITLE
+        ========================== */
+
+        .title {
+            text-align: center;
+
+            padding: 30px 10px;
+        }
+
+        .title h2 {
+            color: #063970;
+
+            font-size: 32px;
+        }
+
+        .title p {
+            color: #666;
+
+            margin-top: 8px;
+        }
+
+
+        /* =========================
+           STUDENT STATISTICS
+        ========================== */
+
+        .statistics {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+            repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+
+        /* Student Box */
+
+        .stat-box {
+            background-color: white;
+
+            padding: 25px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            box-shadow:
+            0 4px 10px rgba(0,0,0,0.1);
+
+            transition: 0.3s;
+        }
+
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-box h3 {
+            color: #063970;
+
+            font-size: 32px;
+
+            margin-bottom: 8px;
+        }
+
+        .stat-box p {
+            color: #555;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================
+           SEARCH
+        ========================== */
+
+        .search {
+            width: 90%;
+            max-width: 700px;
+
+            margin: 35px auto 25px;
+        }
+
+        .search input {
+            width: 100%;
+
+            padding: 14px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        .search input:focus {
+            border-color: #063970;
+        }
+
+
+        /* =========================
+           STUDENT TABLE
+        ========================== */
+
+        .table-container {
+            width: 90%;
+            max-width: 1100px;
+
+            margin: auto;
+
+            overflow-x: auto;
+
+            background-color: white;
+
+            border-radius: 10px;
+
+            box-shadow:
+            0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+        th {
+            background-color: #063970;
+
+            color: white;
+
+            padding: 14px;
+        }
+
+        td {
+            padding: 12px;
+
+            text-align: center;
+
+            border-bottom:
+            1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            margin-top: 40px;
+
+            background-color: #021f3f;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 20px;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================== */
+
+        @media (max-width: 700px) {
+
+            header {
+                height: 75px;
+            }
+
+            header h1 {
+                font-size: 17px;
+            }
+
+            header p {
+                font-size: 11px;
+            }
+
+            .logo {
+                width: 45px;
+                height: 45px;
+
+                left: 8px;
+                top: 15px;
+            }
+
+            nav a {
+                display: inline-block;
+
+                margin: 5px;
+
+                font-size: 13px;
+            }
+
+            .statistics {
+                grid-template-columns: 1fr;
+            }
+
+            .title h2 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header>
+
+        <!-- SCHOOL LOGO -->
+
+        <img
+            src="../images/logo.jpeg"
+            class="logo"
+            alt="Iyunga Secondary School Logo"
+        >
+
+
+        <!-- SCHOOL NAME -->
+
+        <div>
+
+            <h1>
+                IYUNGA SECONDARY SCHOOL
+            </h1>
+
+            <p>
+                Education for Excellence and Success
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <nav>
+
+        <a href="../index.html">
+            Home
+        </a>
+
+        <a href="academic.html">
+            Academics
+        </a>
+
+        <a href="students.html">
+            Students
+        </a>
+
+        <a href="teachers.html">
+            Teachers
+        </a>
+
+        <a href="activities.html">
+            Activities
+        </a>
+
+        <a href="gallery.html">
+            Gallery
+        </a>
+
+        <a href="news.html">
+            News
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================
+         PAGE TITLE
+    ========================== -->
+
+    <section class="title">
+
+        <h2>
+            Our Students
+        </h2>
+
+        <p>
+            Student population by class
+        </p>
+
+    </section>
+
+
+
+    <!-- =========================
+         STUDENT NUMBERS
+    ========================== -->
+
+    <section class="statistics">
+
+
+        <!-- FORM I -->
+
+        <div class="stat-box">
+
+            <h3>
+                80
+            </h3>
+
+            <p>
+                Form I Students
+            </p>
+
+        </div>
+
+
+        <!-- FORM II -->
+
+        <div class="stat-box">
+
+            <h3>
+                75
+            </h3>
+
+            <p>
+                Form II Students
+            </p>
+
+        </div>
+
+
+        <!-- FORM III -->
+
+        <div class="stat-box">
+
+            <h3>
+                78
+            </h3>
+
+            <p>
+                Form III Students
+            </p>
+
+        </div>
+
+
+        <!-- FORM IV -->
+
+        <div class="stat-box">
+
+            <h3>
+                72
+            </h3>
+
+            <p>
+                Form IV Students
+            </p>
+
+        </div>
+
+
+        <!-- FORM V -->
+
+        <div class="stat-box">
+
+            <h3>
+                65
+            </h3>
+
+            <p>
+                Form V Students
+            </p>
+
+        </div>
+
+
+        <!-- FORM VI -->
+
+        <div class="stat-box">
+
+            <h3>
+                60
+            </h3>
+
+            <p>
+                Form VI Students
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SEARCH STUDENTS
+    ========================== -->
+
+    <div class="search">
+
+        <input
+            type="text"
+            id="searchStudent"
+            placeholder="Search student by name or class..."
+            onkeyup="searchStudent()"
+        >
+
+    </div>
+
+
+
+    <!-- =========================
+         STUDENT TABLE
+    ========================== -->
+
+    <div class="table-container">
+
+        <table id="studentTable">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        No.
+                    </th>
+
+                    <th>
+                        Student Name
+                    </th>
+
+                    <th>
+                        Gender
+                    </th>
+
+                    <th>
+                        Class
+                    </th>
+
+                    <th>
+                        Stream
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+
+                <tr>
+
+                    <td>1</td>
+
+                    <td>John Peter</td>
+
+                    <td>Male</td>
+
+                    <td>Form I</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>2</td>
+
+                    <td>Mary Joseph</td>
+
+                    <td>Female</td>
+
+                    <td>Form I</td>
+
+                    <td>B</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>3</td>
+
+                    <td>David Michael</td>
+
+                    <td>Male</td>
+
+                    <td>Form II</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>4</td>
+
+                    <td>Anna George</td>
+
+                    <td>Female</td>
+
+                    <td>Form II</td>
+
+                    <td>B</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>5</td>
+
+                    <td>James William</td>
+
+                    <td>Male</td>
+
+                    <td>Form III</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>6</td>
+
+                    <td>Grace Daniel</td>
+
+                    <td>Female</td>
+
+                    <td>Form III</td>
+
+                    <td>B</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>7</td>
+
+                    <td>Samuel John</td>
+
+                    <td>Male</td>
+
+                    <td>Form IV</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>8</td>
+
+                    <td>Elizabeth Paul</td>
+
+                    <td>Female</td>
+
+                    <td>Form IV</td>
+
+                    <td>B</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>9</td>
+
+                    <td>Peter James</td>
+
+                    <td>Male</td>
+
+                    <td>Form V</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>10</td>
+
+                    <td>Sarah John</td>
+
+                    <td>Female</td>
+
+                    <td>Form VI</td>
+
+                    <td>A</td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Iyunga Secondary School.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT SEARCH
+    ========================== -->
+
+    <script>
+
+        function searchStudent() {
+
+            let input =
+                document.getElementById(
+                    "searchStudent"
+                );
+
+            let filter =
+                input.value.toLowerCase();
+
+            let table =
+                document.getElementById(
+                    "studentTable"
+                );
+
+            let rows =
+                table.getElementsByTagName("tr");
+
+
+            for (
+                let i = 1;
+                i < rows.length;
+                i++
+            ) {
+
+                let text =
+                    rows[i]
+                    .textContent
+                    .toLowerCase();
+
+
+                if (
+                    text.includes(filter)
+                ) {
+
+                    rows[i].style.display =
+                        "";
+
+                } else {
+
+                    rows[i].style.display =
+                        "none";
+
+                }
+
+            }
+
+        }
+
+    </script>
+
+
+</body>
+</html>
